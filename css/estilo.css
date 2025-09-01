@@ -1,0 +1,262 @@
+
+/* Reset global: remove margens/paddings padrões e define box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+/* Cores principais do site definidas como variáveis para facilitar alterações */
+:root {
+    --cor-header:       #121212;
+    --cor-texto:        #ffffff;
+    --cor-texto-principal: #C69DF1;
+    --cor-texto-header: #C69DF1;
+    --cor-texto-card-portifolio: #C69DF1;
+    --cor-hover:        #E8D7FA;
+    --cor-fundo:        #1a1a1a;
+    --cor-fundo-lista: rgba(255,255,255,0.05);
+    --cor-botao:        #6B0EB5; 
+    --cor-footer:       #6B0EB5;
+    
+}
+
+/* Header principal: cor de fundo e texto */
+.header-principal {
+    background-color:  var(--cor-header);
+    color: var(--cor-texto);
+}
+
+/* Links do menu de navegação */
+.header-principal .menu-navegacao a {
+  color: var(--cor-texto-header);
+  font-size: 1.2rem; /* tamanho legível do menu */
+}
+
+.header-principal .menu-navegacao a:hover {
+  color: var(--cor-texto-hover);
+  text-decoration: underline;
+  
+}
+
+/* Estilo da lista do menu: centralizada e com espaçamento */
+.menu-navegacao {
+    margin: 1.25rem;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+body{
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+    max-width: 1200px;
+    margin: 1rem auto; 
+    padding: 1rem; 
+}
+
+/*Página: Sobre mim */
+.titulo-principal {
+    margin-bottom: 0.625rem;
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--cor-texto-principal); 
+    text-align: center;
+}
+
+.subtitulo {
+    margin: 1.25rem;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--cor-texto);
+    text-align: center;
+}
+/* paragrafo (p) */
+.descricao-sobre-mim {
+    font-size: 1.4rem;
+    line-height: 1.6; /*espaçamento entre linhas */
+    color: var(--cor-texto);
+    text-align: justify;
+}
+.hobbies-titulo {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--cor-texto-principal);
+    margin: 1rem;
+    text-align: center; /* ou left, se preferir */
+}
+
+/*Página: Contato */
+/* Seção de contato com fundo levemente destacado */
+.contato-section {
+    background-color: var(--cor-fundo-lista);
+    padding: 1.25rem; 
+    border-radius: 0.625rem;
+    max-width: 50rem;
+    margin: 0 auto;
+}
+
+
+/* Formulário: organiza verticalmente com espaçamento */
+.form-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 0.938rem;
+}
+
+/* Labels do formulário */
+.form-contato label {
+    font-weight: bold;
+    color: var(--cor-texto);
+}
+
+.form-contato input, .form-contato textarea {
+    padding: 0.625rem;
+    border-radius: 0.313rem;
+    border: none;
+    font-size: 1rem;
+}
+
+/* Botão de envio*/
+ .botao-formulario{
+    border-radius: 0.625rem; 
+    background-color: var(--cor-botao);
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 1rem; ;  
+    width: fit-content;
+    margin: 1rem  auto;
+    padding: 0.625rem 2rem;
+    
+}
+
+/* Hover do botão */
+.botao-formulario:hover{
+    background-color: #8A05BE; 
+}
+
+
+/* Página Formação*/
+
+
+.lista-formacao {
+    background-color: var(--cor-fundo-lista);
+    color: var(--cor-texto);
+    font-size: 1.5rem;
+    max-width: 50rem;
+    margin: 0 auto;
+    text-align: left;
+    list-style-type: disc;
+    padding: 2rem;
+}
+
+/* Marcadores da lista com cor */
+.lista-formacao li::marker {
+    color: var(--cor-hover);
+    font-size: 2rem;
+}
+
+.lista-formacao li:hover::marker {
+    color: var(--cor-botao);
+    font-size: 2rem;
+}
+
+/* Título dentro dos itens da lista */
+.lista-formacao .titulo-item {
+    color: var(--cor-texto-principal);
+    font-weight: bold;
+    margin-right: 0.5rem; 
+}
+
+
+.descricao-formacao {
+    font-size: 1.2rem;
+    line-height: 1.6; /*espaçamento entre linhas */
+    color: var(--cor-texto);
+    text-align: left;
+    padding: 1rem;
+}
+
+/* Itens principais da lista */
+.item-principal {
+    background-color: var(--cor-fundo-lista);
+    padding: 1rem;
+}
+
+.sub-lista{
+    padding: 1rem;
+}
+
+
+/* Página de Portifólio  */
+.descricao-portfolio {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 2rem; 
+    font-size: 1.2rem;
+}
+.descricao-card-portfolio {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+/* Container dos cards do portfólio: 3 colunas fixas */
+.projeto-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+/* Cards do portfólio: visual e hover */
+.card-projeto {
+    background-color: var(--cor-fundo-lista);
+    padding: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+.card-projeto:hover {
+    transform: translateY(-10px);
+    box-shadow:  0 10px 20px rgba(0, 0, 0, 0.579); 
+
+}
+
+.titulo-card {
+    font-weight: bolder;
+    font-size: 1.5rem;
+    color: var(--cor-texto-card-portifolio);
+}
+
+/* Lista dentro do card */
+.lista-projetos {
+    font-size: 1.5rem;
+    list-style: square;
+    margin-top: 0.625rem;
+}
+.lista-projetos li {
+    margin-bottom: 5px; /* Espaço entre os itens da lista */
+}
+
+.rodape{
+    background-color: var(--cor-footer);
+    color: var(--cor-texto);
+    text-align: center;
+    padding: 5px 0;
+    
+}
+
+
+
+
